@@ -6,6 +6,7 @@ tags:
 ---
 Hello `grogu` (you are grogu here!). Its going to be ups, and downs (not literally). We gonna learn a lot so before diving deep into something extreme. lets begin with learning about what we gonna learn.
 ![[Grogu-and-Yoga.webp]]
+
 ***Everyone starts as `Grogu`. Learning is how you activate your `Yoda`.***
 
 Andrej Karpathy: [To be expert, you need 10,000 hours of grind.](https://youtu.be/I2ZK3ngNvvI?si=L9zy64LSTr-8NEC9)
@@ -15,5 +16,7 @@ Andrej Karpathy: [To be expert, you need 10,000 hours of grind.](https://youtu.b
 3. [[02_ram_and_bits|Chapter 1: RAM and Bits]]
 
 ***Our journey is going to be tough. Brace for impact!*** **(if you feel its easy, you are in the wrong space. You are already a `YODA`, Go to GitHub, or LeetCode and pick a open-source project to contribute or smash that problem statements on LeetCode)**
-### Note
-I am in constant grind of building and maintain this resource for as long as possible. With your help, we can maintain this till star wars become reality. 
+
+
+> [!NOTE] Note
+> I am in constant grind of building and maintain this resource for as long as possible. With your help, we can maintain this till star wars become reality. 
