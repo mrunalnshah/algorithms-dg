@@ -3,6 +3,7 @@ title: Welcome Grogu
 draft: false
 tags:
   - welcome
+date: 2026-01-12
 ---
 Greetings everyone.
 I am Mrunal Nirajkumar Shah ([@mrunalnshah](https://www.linkedin.com/in/mrunalnshah/)). This is my course on Algorithms and DSA. 

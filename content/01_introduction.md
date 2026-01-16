@@ -3,6 +3,7 @@ title: Introduction
 draft: false
 tags:
   - introduction
+date: 2026-01-12
 ---
 Hello `grogu` (you are grogu here!). Its going to be ups, and downs (not literally). We gonna learn a lot so before diving deep into something extreme. lets begin with learning about what we gonna learn.
 ![[Grogu-and-Yoga.webp]]

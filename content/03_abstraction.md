@@ -3,6 +3,7 @@ title: "Concept 1: Abstraction"
 draft: false
 tags:
   - Concept
+date: 2026-01-16
 ---
 
 > [!NOTE] Yoda Teaching Grogu about Abstraction!

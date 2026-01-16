@@ -5,6 +5,7 @@ tags:
   - Chapter
   - RAM
   - Bits
+date: 2026-01-13
 ---
 
 > [!NOTE] Grogu or Yoda? 
