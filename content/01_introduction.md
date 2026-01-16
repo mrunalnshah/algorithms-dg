@@ -1,7 +1,8 @@
 ---
-dg-publish: false
-dg-home: false
 title: Introduction
+draft: false
+tags:
+  - introduction
 ---
 Hello `grogu` (you are grogu here!). Its going to be ups, and downs (not literally). We gonna learn a lot so before diving deep into something extreme. lets begin with learning about what we gonna learn.
 ![[Grogu-and-Yoga.webp]]

@@ -1,6 +1,8 @@
 ---
-dg-publish: false
-dg-home: false
-title: Chapter 2 Abstraction
+title: "Chapter 2: Abstraction"
+draft: false
+tags:
+  - Concept
+  - Chapter_2
 ---
 This is abstraction md.

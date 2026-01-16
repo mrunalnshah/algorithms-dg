@@ -1,7 +1,10 @@
 ---
-dg-publish: false
-dg-home: false
-title: Chapter 1 - RAM and Bits
+title: "Chapter 1: RAM and Bits"
+draft: false
+tags:
+  - RAM
+  - Bits
+  - Chapter_1
 ---
 
 > [!NOTE] Grogu or Yoda? 

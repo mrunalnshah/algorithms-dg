@@ -1,7 +1,8 @@
 ---
-dg-publish: true
-dg-home: true
-title: Welcome
+title: Welcome to Grogu
+draft: false
+tags:
+  - welcome
 ---
 # Welcome
 
