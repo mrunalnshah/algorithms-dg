@@ -1,49 +1,29 @@
 @use "./base.scss";
 
-// Dark mode table header fix – match common latex-theme patterns + force overrides
 [data-theme="dark"] {
-  table {
-    // Target thead directly
-    thead,
-    thead tr,
-    thead th,
-    thead td {
-      background-color: #111111 !important;  // very dark (almost black) – change to #0d0d0d or #181818 if you want slightly lighter
-      color: #eeeeee !important;             // bright light gray – good contrast on very dark bg
-      // Alternative: pure white text
-      // color: #ffffff !important;
-    }
-
-    // Also target body th (from your inspect) in case header uses <th> outside thead
-    th {
-      background-color: #111111 !important;
-      color: #eeeeee !important;
-    }
-
-    // Keep alternating rows if you like them (add !important if theme overrides)
-    tbody tr:nth-child(odd) {
-      background-color: #1e1e1e !important;
-    }
-    tbody tr:nth-child(even) {
-      background-color: #252525 !important;
-    }
+  th {
+    color: #1a1a1a !important;    
+  }
+  table tbody tr:nth-child(odd) {
+    background-color: #1e1e1e !important;
+  }
+  table tbody tr:nth-child(even) {
+    background-color: #252525 !important;
   }
 }
 
-// Global table improvements (both modes) – add padding, better borders
 table {
   th, td {
-    padding: 0.6em 1em !important;     // force padding so text doesn't touch edges
+    padding: 0.6em 1em !important;   
   }
 
   th {
     font-weight: 600;
     text-align: start;
     vertical-align: top;
-    // Optional: subtle border to make header pop more
     border-bottom: 2px solid #444444 !important;
   }
 
   border-collapse: collapse;
-  width: 100%;   // optional – makes table fill nicely
+  width: 100%;
 }
