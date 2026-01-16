@@ -2,9 +2,9 @@
 title: "Chapter 1: RAM and Bits"
 draft: false
 tags:
+  - Chapter
   - RAM
   - Bits
-  - Chapter_1
 ---
 
 > [!NOTE] Grogu or Yoda? 

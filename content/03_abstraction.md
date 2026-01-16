@@ -3,7 +3,6 @@ title: "Concept 1: Abstraction"
 draft: false
 tags:
   - Concept
-  - Chapter_2
 ---
 
 > [!NOTE] Yoda Teaching Grogu about Abstraction!
@@ -21,6 +20,7 @@ I feel this concept is so important that it can be used in any circumstance in y
 ![[full-abstraction.excalidraw.svg]]
 
 **Explaining the Figure!**
+
 You have Nand Gate and using that you build different logic gates. Now this logic gates, you can forget its implementation and using the logic gates, duplicating them we can build RAM, ALU, and more. And after we build ALU, RAM, we can forget its implementation and use it to build a complete CPU, Computer. This is the way!
 
 Abstraction is in crux is **Don't worry about the "How" it does (Its implementation)?, Just worry about the "What" it does.**
