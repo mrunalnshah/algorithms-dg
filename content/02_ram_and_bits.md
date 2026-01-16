@@ -12,6 +12,7 @@ tags:
 > Day one thousand: Yoda explaining why the button matters.***
 ## What is a RAM?
 ![[8gb-ram-crucial-ddr4.webp]]
+
 ***Figure 1: Crucial 8GB 2400MHz DDR4 SODIMM Laptop Memory***
 
 RAM (for Random Access Memory) is used to store `runtime data` in the form of `data structure`.  Figure 1 shows the image of how a RAM looks like. Runtime data is the data required to run the computers. Your image is a storage-data, but when you double click on the data, it loads the storage-data into runtime memory in RAM which becomes runtime data.
