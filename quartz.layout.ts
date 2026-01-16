@@ -9,7 +9,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/mrunalnshah",
-      "Discord Community": "https://discord.gg/e2Wkkd4z",
+      "Discord Community": "https://discord.gg/4AZPxZ2Pkv",
 	  "LinkedIn": "https://www.linkedin.com/in/mrunalnshah/"
     },
   }),
