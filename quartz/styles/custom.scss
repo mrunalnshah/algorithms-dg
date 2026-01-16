@@ -1,52 +1,42 @@
 @use "./base.scss";
 
 // put your custom CSS here!
-
-/* Dark mode ONLY - force readable headers */
-html.dark, .dark {  /* covers both root class variations */
-  table,
-  table th,
-  table td,
-  table thead,
+/* Only apply in dark mode */
+.dark {
+  table thead tr th,
   table thead th,
   table tr:first-child th,
-  table tr:first-child td {
-    background-color: var(--dark) !important;     /* very dark bg, e.g. #1a1a1a or similar */
-    color: var(--light) !important;               /* white text */
+  table tr:first-child td { /* covers common header patterns */
+    background-color: var(--dark) !important;     /* very dark bg */
+    color: var(--light) !important;               /* white/near-white text */
+    border-color: var(--gray) !important;         /* better border contrast */
+    
+    /* Add padding to header cells */
+    padding: 12px 16px !important;                /* top/bottom 12px, left/right 16px */
   }
 
-  /* Ensure header row specifically (latex often styles first row or thead harshly) */
-  table thead tr,
-  table tr:first-child {
-    background-color: var(--darkgray) !important;  /* slightly lighter dark for contrast */
-    color: var(--light) !important;
+  /* Optional: make body rows more readable too (you can add padding here too if you want) */
+  table tbody tr:nth-child(odd) {
+    background-color: var(--darkgray);            /* subtle stripe */
+  }
+  table tbody tr:nth-child(even) {
+    background-color: var(--dark);                /* or leave as page bg */
   }
 
-  /* Fix any forced white backgrounds/text that might linger */
-  table th[style*="background"],
-  table th[style*="white"],
-  table thead[style*="white"] {
-    background-color: var(--dark) !important;
-    color: var(--light) !important;
-  }
-
-  /* Optional: borders and stripes for better readability */
   table {
-    border-collapse: collapse;
     border-color: var(--gray) !important;
-  }
-
-  table tr:nth-child(even) {
-    background-color: #222 !important;  /* subtle even-row variation */
   }
 }
 
-/* Extra safety net for system dark preference (if toggle uses class but system doesn't) */
+/* Fallback/stronger override using media query (in case .dark isn't always used) */
 @media (prefers-color-scheme: dark) {
   table th,
   table thead th,
   table tr:first-child th {
-    background-color: #222 !important;
-    color: #fff !important;
+    background-color: #2b2b2b !important;
+    color: #ffffff !important;
+    
+    /* Add padding here too for safety */
+    padding: 12px 16px !important;
   }
 }
