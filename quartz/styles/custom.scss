@@ -1,3 +1,23 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// Force readable table headers in dark mode
+body[data-theme="dark"] {
+  table {
+    th, thead tr {
+      background-color: #2d3748 !important;  // dark gray/blueish, common in dark themes
+      color: #e2e8f0 !important;             // light gray/white-ish text for visibility
+    }
+    
+    td, tr {
+      background-color: transparent !important;  // or set to your preferred dark bg if striped
+      color: var(--text) !important;             // inherit Quartz's text color
+    }
+    
+    // Optional: subtle borders for better separation
+    th, td {
+      border-color: #4a5568 !important;
+    }
+  }
+}
