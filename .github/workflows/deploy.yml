@@ -6,7 +6,7 @@ on:
       - v4
       
 env:
-  THEME_NAME: hackthebox
+  THEME_NAME: latex
  
 permissions:
   contents: read

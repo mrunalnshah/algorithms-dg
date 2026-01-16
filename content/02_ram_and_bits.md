@@ -57,8 +57,7 @@ Examples of Data Structures:
 ![[2n-annotation.excalidraw.png| 800]]
 #### Bits are stored in group of 8 bits.
 - bits are in the form of  $2^n$
-- Power of 2's with maximum value can be: 
-	$2^0, 2^1, 2^2, 2^3, 2^4, ... = 1, 2, 4, 8, 16, ...$
+- Power of 2's with maximum value can be:  $2^0, 2^1, 2^2, 2^3, 2^4, ... = 1, 2, 4, 8, 16, ...$
 - For Example:
 	- 1: $2^0$ x 1 + (rest 31 bits are 0) = 1.
 	- 7: $2^0$ x 1 + $2^1$ x 1 + $2^2$ x 1 + (rest 29 bits are 0) = 7
