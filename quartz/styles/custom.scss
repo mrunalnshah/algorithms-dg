@@ -1,31 +1,31 @@
 @use "./base.scss";
 
-// Force dark mode table header: dark background + light text
-// High specificity to beat 'body th' rule + !important everywhere needed
 [data-theme="dark"] body th,
 [data-theme="dark"] table th,
-[data-theme="dark"] table thead th,
-[data-theme="dark"] table thead tr th {
-  background-color: #111111 !important;   // very dark gray (change to #0a0a0a for near-black)
-  color: #f0f0f0 !important;              // light gray/white text for high contrast
-  // If you prefer pure white text:
+[data-theme="dark"] table thead th {
+  background-color: #111111 !important;  // very dark — prevents white bg
+  color: #f0f0f0 !important;            // light text for contrast
+  // If you want pure white text instead:
   // color: #ffffff !important;
-  
-  // Fix padding (theme sets 0)
-  padding: 0.6em 1em !important;
-  
-  // Optional: stronger borders if needed
-  border: 1px solid #444 !important;
-  border-bottom: 2px solid #666 !important;  // underline to separate from body
 }
 
-// If the theme uses thead/tr separately, cover those too
 [data-theme="dark"] table thead,
 [data-theme="dark"] table thead tr {
   background-color: #111111 !important;
 }
 
-// Your alternating body rows (optional, keep or remove)
+// Enforce padding globally (both modes)
+table th,
+table td {
+  padding: 0.6em 1em !important;
+}
+
+// Subtle underline for header separation
+[data-theme="dark"] table th {
+  border-bottom: 2px solid #444444 !important;
+}
+
+// Optional: keep alternating rows darker
 [data-theme="dark"] table tbody tr:nth-child(odd) {
   background-color: #1e1e1e !important;
 }
