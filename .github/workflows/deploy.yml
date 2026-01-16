@@ -6,7 +6,7 @@ on:
       - v4
       
 env:
-  THEME_NAME: aura
+  THEME_NAME: hackthebox
  
 permissions:
   contents: read
