@@ -5,7 +5,7 @@ on:
     branches:
       - v4
       
- env:
+env:
   THEME_NAME: aura
  
 permissions:
