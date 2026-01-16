@@ -147,5 +147,5 @@ Array is a contiguous block of data in a storage.
 1. [NAND2TETRIS](https://www.nand2tetris.org/)
 2. [Build your own 8-bit computer from scratch](https://eater.net/8bit) by Ben Eater
 ## Next?
-- You can go back to: [[01_introduction]]
-- or You can move forward to next chapter: [[03_abstraction]]
+- You can go back to: [[01_introduction| Introduction]]
+- or You can move forward to next chapter: [[03_abstraction | Chapter 2: Abstraction]]
