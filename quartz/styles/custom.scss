@@ -1,42 +1,41 @@
 @use "./base.scss";
 
 // put your custom CSS here!
-/* Only apply in dark mode */
-.dark {
-  table thead tr th,
-  table thead th,
-  table tr:first-child th,
-  table tr:first-child td { /* covers common header patterns */
-    background-color: var(--dark) !important;     /* very dark bg */
-    color: var(--light) !important;               /* white/near-white text */
-    border-color: var(--gray) !important;         /* better border contrast */
-    
-    /* Add padding to header cells */
-    padding: 12px 16px !important;                /* top/bottom 12px, left/right 16px */
-  }
-
-  /* Optional: make body rows more readable too (you can add padding here too if you want) */
-  table tbody tr:nth-child(odd) {
-    background-color: var(--darkgray);            /* subtle stripe */
-  }
-  table tbody tr:nth-child(even) {
-    background-color: var(--dark);                /* or leave as page bg */
-  }
-
+[data-theme="dark"] {
   table {
-    border-color: var(--gray) !important;
+    thead {
+      th,
+      td {
+        background-color: #2e2e2e !important;     // dark gray — readable & matches most dark themes
+        color: #e5e5e5 !important;                 // light gray-white text
+        // or: color: white !important;
+      }
+    }
+
+    // Optional: make body rows slightly different so header stands out
+    tbody tr:nth-child(odd) {
+      background-color: #1e1e1e;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #252525;
+    }
   }
 }
 
-/* Fallback/stronger override using media query (in case .dark isn't always used) */
-@media (prefers-color-scheme: dark) {
-  table th,
-  table thead th,
-  table tr:first-child th {
-    background-color: #2b2b2b !important;
-    color: #ffffff !important;
-    
-    /* Add padding here too for safety */
-    padding: 12px 16px !important;
+// Add padding to ALL table cells — applies in both light & dark mode
+table {
+  th,
+  td {
+    padding: 0.6em 1em;   // Recommended: a bit more left/right for readability
+    // Alternatives you can try:
+    // padding: 8px 12px;     // fixed px — very common
+    // padding: 0.5em 0.8em;  // slightly tighter
+    // padding: 12px;         // same on all sides
   }
+}
+
+// Optional: make sure the table itself doesn't add weird spacing
+table {
+  border-collapse: collapse;   // removes gaps between cells (usually good for clean look)
+  width: 100%;                 // optional: makes table fill container nicely
 }
