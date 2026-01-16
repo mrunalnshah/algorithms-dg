@@ -85,37 +85,41 @@ Array is a contiguous block of data in a storage.
 - denoted with `&` in many programming languages.
 - N = 1 & 1 = 1
 
-| 0 & 0 | 0   |
-| ----- | --- |
-| 0 & 1 | 0   |
-| 1 & 0 | 0   |
-| 1 & 1 | 1   |
+| IN 1 | Operation | IN 2 | OUT |
+| ---- | --------- | ---- | --- |
+| 0    | &         | 0    | 0   |
+| 0    | &         | 1    | 0   |
+| 1    | &         | 0    | 0   |
+| 1    | &         | 1    | 1   |
 ### OR
 - denoted with `|` in many programming languages.
 - N = 1 | 0 = 1
 
-| 0 \| 0 | 0   |
-| ------ | --- |
-| 0 \| 1 | 1   |
-| 1 \| 0 | 1   |
-| 1 \| 1 | 1   |
+| IN 1 | Operation | IN 2 | OUT |
+| ---- | --------- | ---- | --- |
+| 0    | \|        | 0    | 0   |
+| 0    | \|        | 1    | 1   |
+| 1    | \|        | 0    | 1   |
+| 1    | \|        | 1    | 1   |
 
 ### XOR
 - denoted with `^` in many programming languages.
 - N = 0 ^ 1 = 1 
 
-| 0 ^ 0 | 0   |
-| ----- | --- |
-| 0 ^ 1 | 1   |
-| 1 ^ 0 | 1   |
-| 1 ^ 1 | 0   |
+| IN 1 | Operation | IN 2 | OUT |
+| ---- | --------- | ---- | --- |
+| 0    | ^         | 0    | 0   |
+| 0    | ^         | 1    | 1   |
+| 1    | ^         | 0    | 1   |
+| 1    | ^         | 1    | 0   |
 ### NOT (also called `negation`)
 - denoted with `~` in many programming languages. Sometimes `!` is also used to represent negation.
 - N = ~1 = 0
 
-| ~0  | 1   |
-| --- | --- |
-| ~1  | 0   |
+| IN  | Operation | OUT |
+| --- | --------- | --- |
+| 0   | ~         | 1   |
+| 1   | ~         | 0   |
 ## Bit Shifting Operation
 - Computer widely uses bit shifting for:
 	- Performance Optimizations like multiplication/division by powers of two into shifts for speed.
