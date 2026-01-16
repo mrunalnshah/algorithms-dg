@@ -15,7 +15,7 @@ Sincerely,
 Mrunal.
 
 ### **Connect With Me:**
-1. GitHub: [mrunalnshah](github.com/mrunalnshah/) 
+1. GitHub: [mrunalnshah](https://github.com/mrunalnshah/)
 2. LinkedIn: [mrunalnshah](https://www.linkedin.com/in/mrunalnshah/)
 3. Kaggle: [mrunalnshah](https://www.kaggle.com/mrunalnshah)
 4. Discord: [SpicyLemon](https://discord.gg/4AZPxZ2Pkv)
