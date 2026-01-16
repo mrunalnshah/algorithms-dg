@@ -2,22 +2,30 @@
 
 // put your custom CSS here!
 
-// Force readable table headers in dark mode
-body[data-theme="dark"] {
+/* Force readable table headers in dark mode */
+.dark {
+  table thead tr th,
+  table tr:first-child th,
+  table tr:first-child td {  /* in case headers are styled as td */
+    background-color: var(--darkgray) !important;   /* or #2d2d2d, #333, etc. — a dark but not black shade */
+    color: var(--light) !important;                 /* usually white or near-white text */
+  }
+
+  /* Optional: zebra striping or body rows if needed */
+  table tr:nth-child(even) {
+    background-color: #1e1e1e;  /* slightly darker/lighter variation */
+  }
+
   table {
-    th, thead tr {
-      background-color: #2d3748 !important;  // dark gray/blueish, common in dark themes
-      color: #e2e8f0 !important;             // light gray/white-ish text for visibility
-    }
-    
-    td, tr {
-      background-color: transparent !important;  // or set to your preferred dark bg if striped
-      color: var(--text) !important;             // inherit Quartz's text color
-    }
-    
-    // Optional: subtle borders for better separation
-    th, td {
-      border-color: #4a5568 !important;
-    }
+    border-color: var(--gray) !important;
+  }
+}
+
+/* If the theme forces white explicitly somewhere, you can also target more broadly */
+@media (prefers-color-scheme: dark) {
+  table th,
+  table thead {
+    background-color: #333 !important;
+    color: white !important;
   }
 }
