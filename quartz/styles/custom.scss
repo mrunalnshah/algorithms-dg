@@ -1,41 +1,49 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Dark mode table header fix – match common latex-theme patterns + force overrides
 [data-theme="dark"] {
   table {
-    thead {
-      th,
-      td {
-        background-color: #1a1a1a !important;     // dark gray — readable & matches most dark themes
-        color: #f0f0f0 !important;                 // light gray-white text
-        // or: color: white !important;
-      }
+    // Target thead directly
+    thead,
+    thead tr,
+    thead th,
+    thead td {
+      background-color: #111111 !important;  // very dark (almost black) – change to #0d0d0d or #181818 if you want slightly lighter
+      color: #eeeeee !important;             // bright light gray – good contrast on very dark bg
+      // Alternative: pure white text
+      // color: #ffffff !important;
     }
 
-    // Optional: make body rows slightly different so header stands out
+    // Also target body th (from your inspect) in case header uses <th> outside thead
+    th {
+      background-color: #111111 !important;
+      color: #eeeeee !important;
+    }
+
+    // Keep alternating rows if you like them (add !important if theme overrides)
     tbody tr:nth-child(odd) {
-      background-color: #1e1e1e;
+      background-color: #1e1e1e !important;
     }
     tbody tr:nth-child(even) {
-      background-color: #252525;
+      background-color: #252525 !important;
     }
   }
 }
 
-// Add padding to ALL table cells — applies in both light & dark mode
+// Global table improvements (both modes) – add padding, better borders
 table {
-  th,
-  td {
-    padding: 0.6em 1em;   // Recommended: a bit more left/right for readability
-    // Alternatives you can try:
-    // padding: 8px 12px;     // fixed px — very common
-    // padding: 0.5em 0.8em;  // slightly tighter
-    // padding: 12px;         // same on all sides
+  th, td {
+    padding: 0.6em 1em !important;     // force padding so text doesn't touch edges
   }
-}
 
-// Optional: make sure the table itself doesn't add weird spacing
-table {
-  border-collapse: collapse;   // removes gaps between cells (usually good for clean look)
-  width: 100%;                 // optional: makes table fill container nicely
+  th {
+    font-weight: 600;
+    text-align: start;
+    vertical-align: top;
+    // Optional: subtle border to make header pop more
+    border-bottom: 2px solid #444444 !important;
+  }
+
+  border-collapse: collapse;
+  width: 100%;   // optional – makes table fill nicely
 }
