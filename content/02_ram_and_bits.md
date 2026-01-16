@@ -147,4 +147,4 @@ Array is a contiguous block of data in a storage.
 2. [Build your own 8-bit computer from scratch](https://eater.net/8bit) by Ben Eater
 ## Next?
 - You can go back to: [[01_introduction| Introduction]]
-- or You can move forward to next chapter: [[03_abstraction | Chapter 2: Abstraction]]
+- or You can move forward to next chapter: [[03_abstraction | Concept 1: Abstraction]]
