@@ -2,36 +2,51 @@
 
 // put your custom CSS here!
 
-/* Only apply in dark mode */
-.dark {
-  table thead tr th,
+/* Dark mode ONLY - force readable headers */
+html.dark, .dark {  /* covers both root class variations */
+  table,
+  table th,
+  table td,
+  table thead,
   table thead th,
   table tr:first-child th,
-  table tr:first-child td {  /* covers common header patterns */
-    background-color: var(--dark) !important;     /* Quartz var: usually a dark gray/black */
-    color: var(--light) !important;               /* white/near-white text */
-    border-color: var(--gray) !important;         /* optional: better border contrast */
+  table tr:first-child td {
+    background-color: var(--dark) !important;     /* very dark bg, e.g. #1a1a1a or similar */
+    color: var(--light) !important;               /* white text */
   }
 
-  /* Optional: make body rows more readable too */
-  table tbody tr:nth-child(odd) {
-    background-color: var(--darkgray);            /* subtle stripe */
+  /* Ensure header row specifically (latex often styles first row or thead harshly) */
+  table thead tr,
+  table tr:first-child {
+    background-color: var(--darkgray) !important;  /* slightly lighter dark for contrast */
+    color: var(--light) !important;
   }
 
-  table tbody tr:nth-child(even) {
-    background-color: var(--dark);                /* or leave as page bg */
+  /* Fix any forced white backgrounds/text that might linger */
+  table th[style*="background"],
+  table th[style*="white"],
+  table thead[style*="white"] {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
   }
 
+  /* Optional: borders and stripes for better readability */
   table {
+    border-collapse: collapse;
     border-color: var(--gray) !important;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #222 !important;  /* subtle even-row variation */
   }
 }
 
-/* Fallback/stronger override using media query (in case .dark isn't always used) */
+/* Extra safety net for system dark preference (if toggle uses class but system doesn't) */
 @media (prefers-color-scheme: dark) {
   table th,
-  table thead {
-    background-color: #2b2b2b !important;  /* fallback hex if vars don't apply */
-    color: #ffffff !important;
+  table thead th,
+  table tr:first-child th {
+    background-color: #222 !important;
+    color: #fff !important;
   }
 }
