@@ -5,7 +5,8 @@ tags:
   - welcome
 date: 2026-01-12
 ---
-Greetings everyone.
+Greetings `Grogu`, (Yes! you.)
+
 I am Mrunal Nirajkumar Shah ([@mrunalnshah](https://www.linkedin.com/in/mrunalnshah/)). This is my course on Algorithms and DSA. 
 
 #### Why this course?
@@ -18,6 +19,7 @@ Not everyone learns better from a single resource. This may or may not work for 
 May god show his path for us.
 
 Thank you,
+
 Mrunal.
 
 Let us get started: [[01_introduction|Introduction]]
