@@ -38,8 +38,7 @@ This is the concept of Abstraction.
 
 With this concept, you can now recalibrate your previous project and use this ideology to implement it again and you will see the ease of creating modules and making a organized solution for your problems.
 
-See you soon `grogu`, 
-
+See you soon `grogu`,  
 Mrunal.
 
 ## Next?

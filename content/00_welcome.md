@@ -18,8 +18,7 @@ Not everyone learns better from a single resource. This may or may not work for 
 
 May god show his path for us.
 
-Thank you,
-
+Thank you,  
 Mrunal.
 
 Let us get started: [[01_introduction|Introduction]]

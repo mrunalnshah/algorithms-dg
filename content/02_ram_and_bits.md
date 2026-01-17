@@ -40,7 +40,7 @@ Examples of Data Structures:
 **`8 GB` is approximately a `8,589,934,592 bytes`, which is `68,719,476,736 bits` and each bit stores either `0` or `1`.**
 
 ### Reality of 0's and 1's?
-- A bit is either `0` or `1` is an abstract form. Under the hood, its `transistors` that scores data in the form of `voltage`.
+- A bit is either `0` or `1` is an abstract form. Under the hood, its `transistors` that stores data in the form of `voltage`.
 - In Reality:
 	- `0` means low voltage.
 	- `1` means high voltage.
@@ -60,8 +60,8 @@ Examples of Data Structures:
 - bits are in the form of  $2^n$
 - Power of 2's with maximum value can be:  $2^0, 2^1, 2^2, 2^3, 2^4, ... = 1, 2, 4, 8, 16, ...$
 - For Example:
-	- 1: $2^0$ x 1 + (rest 31 bits are 0) = 1.
-	- 7: $2^0$ x 1 + $2^1$ x 1 + $2^2$ x 1 + (rest 29 bits are 0) = 7
+	- 1: $2^0$ x 1 + ($2^1$ x 0 + $2^2$ x 0 + ... rest 29 bits are 0) = 1.
+	- 7: $2^0$ x 1 + $2^1$ x 1 + $2^2$ x 1 + ($2^3$ x 0 + $2^4$ x 0 + ... rest 27 bits are 0) = 7
 ## What is Array?
 Array is a contiguous block of data in a storage. 
 ### How arrays are stored in RAM?
@@ -151,6 +151,5 @@ Array is a contiguous block of data in a storage.
 - or You can move forward to next chapter: [[03_abstraction | Concept 1: Abstraction]]
 
 
-Goodbye `Grogu`,
-
+Goodbye `Grogu`,  
 Mrunal.
