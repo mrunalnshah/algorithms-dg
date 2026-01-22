@@ -143,13 +143,17 @@ Array is a contiguous block of data in a storage.
 **This is bit shifting, again it can be overwhelming, but its not.**
 
 **This is all about RAM and Bits. You can read more about how a computer works under the hood in your free time with below resources:** 
-# Supplementary Resources
+## [Coding Arena](https://docs.google.com/spreadsheets/d/10EmWLMx8Qx1onDtqhYAgraV2Vv462XN3lgajgXCVGH0/edit?usp=sharing)
+Solve the problems. If stuck use the solution link to pull yourself towards the right path, but don't push yourself. Remember to give yourself break and come back to think on the problem in different way.
+1. [LeetCode - 191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)  -  [[0191. Number of 1 Bits - LeetCode|Solution]]
+2. [LeetCode - 338. Counting Bits](https://leetcode.com/problems/counting-bits/) - [[0338. Counting Bits - LeetCode|Solution]]
+3. [LeetCode - 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) - [[0190. Reverse Bits - LeetCode|Solution]]
+## Supplementary Resources
 1. [NAND2TETRIS](https://www.nand2tetris.org/)
 2. [Build your own 8-bit computer from scratch](https://eater.net/8bit) by Ben Eater
 ## Next?
 - You can go back to: [[01_introduction| Introduction]]
 - or You can move forward to next chapter: [[03_abstraction | Concept 1: Abstraction]]
-
 
 Goodbye `Grogu`,  
 Mrunal.

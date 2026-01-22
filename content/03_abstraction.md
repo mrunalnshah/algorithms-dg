@@ -26,7 +26,7 @@ You start with a NAND gate. Using only NAND gates, you can construct all other l
 
 This is the way.
 
-Abstraction is in crux is **Don't worry about the "How" it does (Its implementation)?, Just worry about the "What" it does.**
+Abstraction is in crux is **Don't worry about the "How" it does (Its implementation), Just worry about the "What" it does.**
 
 The cognitive ability to "divide and conquer" a complex system into manageable modules is empowered by yet another cognitive gift: our ability to discern between the *abstraction* and the *implementation* of each module.
 
