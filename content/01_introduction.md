@@ -5,9 +5,8 @@ tags:
   - introduction
 date: 2026-01-12
 ---
-Hello `grogu`. Its going to be ups, and downs (not literally). We gonna learn a lot so before diving deep into something extreme. lets begin with learning about what we gonna learn.
-![[Grogu-and-Yoga.webp]]
-
+Hello `grogu`. Its going to be ups, and downs (not literally). We gonna learn a lot so before diving deep into something extreme. lets begin with learning about what we gonna learn. 
+![[Grogu-and-Yoga.webp]]  
 ***Everyone starts as `Grogu`. Learning is how you activate your `Yoda`.***
 
 Andrej Karpathy: [To be expert, you need 10,000 hours of grind.](https://youtu.be/I2ZK3ngNvvI?si=L9zy64LSTr-8NEC9)

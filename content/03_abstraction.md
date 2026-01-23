@@ -14,7 +14,7 @@ date: 2026-01-16
 
 Greetings `Grogu`,
 
-I feel this concept is so important that it can be used in any circumstance in your life. Using it will make your life so better that you will tackle big problem statements and its solutions with ease. 
+I feel this concept is so important that it can be used in any circumstance in your life. Using it will make your life so better that you will tackle **any** problem statements and its solutions with ease. 
 
 ## What is Abstraction?
 
@@ -22,11 +22,11 @@ I feel this concept is so important that it can be used in any circumstance in y
 
 **Explaining the Figure!**
 
-You start with a NAND gate. Using only NAND gates, you can construct all other logic gates. Once those gates are built, you can ignore their internal implementation and use them as building blocks. By combining and duplicating these logic gates, you can create components like RAM and an ALU. After that, you can again forget the internal details and use the ALU and RAM to build a complete CPU—and ultimately, an entire computer. 
+You start with a NAND gate (keeping electrical engineering abstract). Using only NAND gates, you can construct all other logic gates. Once those gates are built, you can ignore their internal implementation and use them as building blocks. By combining and duplicating these logic gates, you can create components like RAM and an ALU. After that, you can again forget the internal details and use the ALU and RAM to build a complete CPU—and ultimately, an entire computer. 
 
-This is the way.
+***This is the way.***
 
-Abstraction is in crux is **Don't worry about the "How" it does (Its implementation), Just worry about the "What" it does.**
+Abstraction in crux is **Don't worry about the "How" it does (Its implementation), Just worry about the "What" it does.**
 
 The cognitive ability to "divide and conquer" a complex system into manageable modules is empowered by yet another cognitive gift: our ability to discern between the *abstraction* and the *implementation* of each module.
 
@@ -38,7 +38,7 @@ This is the concept of Abstraction.
 
 With this concept, you can now recalibrate your previous project and use this ideology to implement it again and you will see the ease of creating modules and making a organized solution for your problems.
 
-See you soon `grogu`,  
+See you soon `grogu` and remember to use abstraction,  
 Mrunal.
 
 ## Next?
