@@ -34,7 +34,7 @@ Here, we store a = 4, and b = 10 to memory. We than define a pointer p which sto
 ![[computer-memory-pointer.excalidraw.svg]]  
 
 **C Code**  
-``` C
+``` c
 #include <stdio.h>
 
 int main(){
@@ -63,7 +63,7 @@ Output:
 
 ### Working with Codes
 
-``` C
+``` c
 #include <stdio.h>
 
 int main(){
@@ -79,7 +79,7 @@ int main(){
 }
 ```
 
-``` C
+``` c
 #include <stdio.h>
 
 int main(){
@@ -99,7 +99,7 @@ int main(){
 }
 ```
 
-``` C
+``` c
 #include <stdio.h>
 
 int main(){
@@ -119,7 +119,7 @@ int main(){
 }
 ```
 
-``` C
+``` c
 #include <stdio.h>
 
 int main() {
@@ -148,7 +148,7 @@ int main() {
 ```
 
 **Pointer Arithmetic - We add 1 to the current address to get what? Next Address, or next integer?**
-``` C
+``` c
 #include <stdio.h>
 
 int main(){
@@ -172,6 +172,213 @@ int main(){
 	return 0;
 }
 ```
+
+
+## Pointer types, void pointers, and pointer arithmetic
+
+**Pointer variables are strongly typed.** It means you need pointer variable of a particular type to store the address of a particular type of variable.  
+![[strong-type-req.excalidraw.svg]]  
+
+**Why strong types? Why not some generic types?**  
+The answer is that we do not use the pointer variables only to store memory addresses. We also use them to dereference the addresses so that we can access and modify the values in those addresses.
+
+Now as we know that datatypes have different sizes like Integers, Its stored in **4 Bytes**. (integer required 4 bytes, character requires 1 byte and float required 4 bytes)
+
+This variables differ not only in their sizes, they also differ in how we store information in whatever bytes are available for these variables or data types.
+
+Let's say we have an integer:  
+![[integer-example-storing.excalidraw.svg]]
+
+
+> [!NOTE] Pointer Arithmetics
+> The only pointer arithmetic that is allowed is **adding** or **subtracting** some constant integer value to/from the pointer variable.
+
+### Void Pointer - Generic Pointer
+1. Void pointers are generic pointers, they can store any data types.
+2. The caveat is they cannot dereference.
+
+### C Code  
+``` c
+#include <stdio.h>
+
+int main(){
+	int a = 1025;
+	int* p;
+	
+	p = &a;
+	  
+	printf("size of integer is %lu\n", sizeof(int));
+	printf("address = %p, value = %d\n\n",p, *p);
+	
+	return 0;
+}
+```
+
+``` c
+#include <stdio.h>
+
+int main(){
+	int a = 1025;
+	int* p;
+	
+	p = &a;
+	  
+	printf("size of integer is %lu\n", sizeof(int));
+	printf("address = %p, value = %d\n\n",p, *p);
+	
+	char* pc;
+	
+	pc = p; // ERROR: CANNOT STORE int* to char*
+	
+	return 0;
+}
+```
+
+``` c
+#include <stdio.h>
+
+int main(){
+	int a = 1025;
+	int* p;
+	
+	p = &a;
+	  
+	printf("size of integer is %lu\n", sizeof(int));
+	printf("address = %p, value = %d\n\n",p, *p);
+	  
+	char* pc;
+	
+	pc = (char*) p; // typecasting
+	
+	printf("size of char is %lu\n", sizeof(char));
+	printf("address = %p, value = %d\n\n",pc, *pc); // 1
+	
+	return 0;
+}
+```
+
+**Explanation:**  
+Why its 1?  
+**1025** = 00000000 00000000 00000100 00000001  
+char* is 1 byte, so it takes the first byte which is 00000001 and we use %d to print integer so it display's 1.  
+
+``` c
+#include <stdio.h>
+
+int main(){
+	int a = 1025;
+	int* p;  
+	
+	p = &a;
+	
+	printf("size of integer is %lu\n", sizeof(int));
+	printf("address = %p, value = %d\n",p, *p);
+	printf("address = %p, value = %d\n\n",p+1, *(p+1));
+	
+	char* pc;
+	
+	pc = (char*) p; // typecasting
+	
+	printf("size of char is %lu\n", sizeof(char));
+	printf("address = %p, value = %d\n",pc, *pc);
+	printf("address = %p, value = %d\n\n",pc+1, *(pc+1)); // 4 because 100 in byte 1
+	
+	return 0;
+}
+```
+
+``` c
+#include <stdio.h>
+
+int main(){
+	int a = 1025;
+	int* p;
+	
+	p = &a;
+	
+	printf("size of integer is %lu\n", sizeof(int));
+	printf("address = %p, value = %d\n\n",p, *p);
+	  
+	// Void Pointer - Generic Pointer
+	void* pv;
+	  
+	pv = p;
+	
+	printf("Address = %p, value = %d\n", pv, *pv); // ERROR: We cannot dereference void pointer.
+	printf("Address = %p\n", pv); // We can only print the address.
+	
+	return 0;
+}
+```
+
+``` c
+#include <stdio.h>
+
+int main(){
+	int a = 1025;
+	int* p;
+	
+	p = &a;
+	  
+	printf("size of integer is %lu\n", sizeof(int));
+	printf("address = %p, value = %d\n\n",p, *p);
+	
+	// Void Pointer - Generic Pointer
+	void* pv;
+	  
+	pv = p;
+	
+	printf("Address = %p\n", pv); // We can only print the address.
+	printf("Address = %p\n", pv+1); // We can do artihmetic operations on void pointer.
+	
+	return 0;
+}
+
+```
+
+## Pointer to pointer
+**Why do we need pointer to integer to reference or store the address of an integer?**  
+It's because we don't just store the address of a variable in a pointer variable. We also use the pointer variable to dereference that address and write some value there.
+
+**Can we create a pointer to the variable which is pointer to a variable itself? *We can!***  
+![[pointer-to-pointer.excalidraw.svg]]  
+
+### C Code:
+``` c
+#include <stdio.h>
+
+int main() {
+	int x = 5;
+	int* p = &x;
+	
+	*p = 6;
+	
+	int** q = &p;
+	int*** r = &q;
+	
+	printf("*p is %p\n", p); // Address of pointer p
+	printf("*p is %d\n\n", *p); // Value at address stored in p // 6
+	
+	printf("q is %p\n", q); // Address of pointer q
+	printf("*q is %p\n", *q); // Value at Address stored in pointer q
+	printf("**q is %d\n\n", *(*q)); // Value at address stored in pointer q and value at that address.
+	
+	printf("r is %p\n", r); // Address of r
+	printf("*r is %p\n", *r); // Value of Address stored at pointer r
+	printf("**r is %p\n", *(*r)); // Value at address stored in pointer r and value at that address.
+	printf("***r is %d\n\n", *(*(*r))); // Value at address stored in pointer r and value at that address and value of that address too.
+	
+	
+	***r = 10;
+	printf("***r = 10; x = %d\n\n", x);
+	
+	**q = *p + 2;
+	printf("**q = *p + 2; x = %d\n\n", x);
+	
+	return 0;
+}
+```
+
 
 
 **Work in Progress...**  
