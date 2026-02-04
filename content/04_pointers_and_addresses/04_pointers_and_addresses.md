@@ -356,7 +356,7 @@ int main() {
 	int** q = &p;
 	int*** r = &q;
 	
-	printf("*p is %p\n", p); // Address of pointer p
+	printf("p is %p\n", p); // Address of pointer p
 	printf("*p is %d\n\n", *p); // Value at address stored in p // 6
 	
 	printf("q is %p\n", q); // Address of pointer q
@@ -378,6 +378,138 @@ int main() {
 	return 0;
 }
 ```
+
+##  Pointers as a function arguments - call by reference
+
+We have a code:
+``` c
+// CALL BY VALUE
+
+#include <stdio.h>
+
+void increment(int a){
+	a = a + 1;
+}
+
+int main(){
+	int a;
+	
+	a = 10;
+	
+	increment(a);
+	
+	printf("Value of a = %d", a);
+	
+	return 0;
+}
+```  
+*Output:*
+Value of a = 10  
+
+**Why?**  
+To learn this happened, we need to learn first about how memory is allocated in computers for program's to execute.  
+![[pointer-as-function-argument.excalidraw.svg]]
+
+So coming back to our program. Why it run like the way it did.  
+![[pointer-as-function-arguments-example.excalidraw.svg]]  
+
+> [!NOTE] CRASH OUT
+> Stack is fixed size. So if you have a scenario where one function keeps calling another function indefinitely like in the case of indefinite recursion, then the memory of this stack will overflow and our program will crash!
+
+> [!NOTE] Lifetime of Locals
+> Lifetime of local variables are till scope of the function executes. Till the function is executing.
+
+So whats happening and how can we fix this ? (Code is perfect, Its the logical error from our side.)  We use **call by value** method. We should use **Call by Reference** as it saves a lot of memory aside from initializing a pointer variable.
+![[call-by-value.excalidraw.svg]]
+
+**C Code:**  
+``` c
+// CALL BY REFERENCE
+
+#include <stdio.h>
+
+void increment(int* a){
+	*a = (*a) + 1;
+	printf("Address of a in increment: %p\n", &a);
+}
+
+  
+
+int main(){
+	int a;
+	
+	a = 10;
+	  
+	increment(&a);
+	
+	printf("Address of a in main: %p\n", &a);
+	printf("Value of a in main: %d\n", a);
+		
+	return 0;
+}
+```
+
+### What is Local vs Global?  
+![[local-vs-global.excalidraw.svg]]   
+
+## Pointers and arrays
+
+![[pointers-arrays.excalidraw.svg]]
+
+**Property of Array:** If we just use the name of the Array A, then A gives us the pointer to the first element in the Array.
+
+``` c
+int A[5];
+int* p;
+
+p = &A[0];
+//or
+p = A;
+```
+
+***Important for Arrays & Pointers in C:***  
+**Element at index i**
+- Address: `&A[i]` or `(A + i)`
+- Value: `A[i]` or `*(A + i)`
+
+**Base Address or Address of first element** is `A` or `&A[0]`
+
+> [!NOTE] Incrementable?
+> ```c
+> A++; // INVALID
+> p++; // VALID
+> ```
+> Arrays & Pointers are related, not same.
+> A has data-type of `int[5]`, while pointer is `int*`. `int[5` decays into a pointer to its first element as `int*`. But decay is temporary.  While address can change, therefore **Increment of p can be done, while increment of A cannot be.**  
+
+
+**C Code:**  
+``` c
+#include <stdio.h>
+
+int main() {
+	int A[] = {2, 4, 5, 8, 1};  
+	
+	printf("Address of A is %p\n", A);
+	printf("Address of A[0] is %p\n", &A[0]);
+	printf("Value of A[0] is %d\n", A[0]);
+	printf("Value of A is %d\n\n", *A);
+	
+	// Loop it
+	printf("Loop through Array to find addresses\n");
+	for(int i = 0; i < 5; i++){
+		printf("Address of A[%d] is %p\n", i, &A[i]);
+		printf("Address of A + %d is %p\n",i, A+i);
+		printf("Value of A[%d] is %d\n", i, A[i]);
+		printf("Value of A + %d is %d\n\n",i, *(A + i));
+	}
+	
+	return 0;
+}
+```
+
+
+## Arrays as function arguments
 
 
 
