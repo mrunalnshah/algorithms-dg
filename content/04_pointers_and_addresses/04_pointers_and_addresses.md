@@ -645,6 +645,243 @@ int main() {
 
 ## Character arrays and pointers
 
+**Character Arrays** are known as *Strings*. String is a group or set of characters, and real world data like names, phrases, and sentences are all strings. Examples:
+- "Mrunal"
+- "Hello World"
+- "I am feeling lucky."
+
+
+> [!NOTE] Character Arrays
+> Character arrays becomes more important because we use them to store strings, and then perform a lot of operations on strings like modifying a string, copying a string, concatenating two strings or finding out properties of strings like finding out the length of a string.
+
+### How to store strings?
+1. **Size of Array should be greater than or equals to one more than the number of characters in string.**
+2. Example: "JOHN". Size >= 5.
+
+``` c
+#include <stdio.h>
+
+int main() {
+	char c[20];
+	
+	c[0] = 'J';
+	c[1] = 'O';
+	c[2] = 'H';
+	c[3] = 'N';
+	
+	printf("%s", c); // Can show garbage value based on C Compiler
+	
+	return 0;
+}
+```
+
+
+Why 5? Why not 4?  
+![[character-string-why-1-more.excalidraw.svg]]  
+
+***`\0` is null character used to represent end of string.***  
+
+``` c
+#include <stdio.h>
+
+int main() {
+	char c[20];
+	  
+	c[0] = 'J';
+	c[1] = 'O';
+	c[2] = 'H';
+	c[3] = 'N';
+	c[4] = '\0';
+	
+	printf("%s", c);
+	  
+	return 0;
+}
+```
+
+
+> [!NOTE] C RULE
+> All the functions for string manipulation in C expects that strings will be null terminated.
+
+``` c
+#include <stdio.h>
+#include <string.h> // strlen,
+
+int main() {
+	char c[20];
+	  
+	c[0] = 'J';
+	c[1] = 'O';
+	c[2] = 'H';
+	c[3] = 'N';
+	c[4] = '\0'; // Good standard to end string with null character.
+	  
+	int length = strlen(c);
+	  
+	printf("Length: %d\n", length);
+	
+	return 0;
+}
+```
+
+### String Literals
+**String Literals** are group of character within *Double quotation* mark.
+
+``` c
+#include <stdio.h>
+#include <string.h> // strlen,
+
+int main() {
+	char c[20] = "JOHN"; // Size 20 // String Literal
+	char d[] = "JOHN"; // Size 5 // String Literal
+	// char e[4] = "JOHN"; // Compilation ERROR // No Null Character Space
+	
+	printf("Size in bytes, c: %lu\n", sizeof(c));
+	printf("Size in bytes, d: %lu\n\n", sizeof(d));
+	
+	int lengthc = strlen(c);
+	int lengthd = strlen(d);
+	
+	printf("Length, c: %d\n", lengthc);
+	printf("Length, d: %d\n\n", lengthd);  
+	
+	return 0;
+}
+```
+
+**One more way**  
+``` c
+char f[5] = {'J', 'O', 'H', 'N', '\0'}; // One more way; Size 5
+```  
+
+### Arrays and pointers are different types
+Arrays and pointers are different types that are used in similar manner.
+
+![[arrays-vs-pointers.excalidraw.svg]]  
+
+### Arrays aare always passed to function by reference (function as argument recap)
+
+``` c
+#include <stdio.h>
+
+// char C[] is same as char* C by compiler here (base address)
+void print(char C[]) {
+	int i = 0;
+	
+	// C[i] ~ *(C + i)
+	while (C[i] != '\0') {
+		printf("%c", C[i])
+		i++;
+	}
+	
+	printf("\n");
+}
+
+// Pointer variables can be incremented.
+void print2(char* C) {
+	while (*C != '\0'){
+		printf("%c", *C);
+		C++;
+	}
+	
+	printf("\n");
+}
+
+int main() {
+	char c[20] = "Hello";
+	
+	print(c);
+	print2(c);
+	
+	return 0;
+}
+```
+
+**How does it work in memory?**  
+![[character-array-pointers-memory.excalidraw.svg]]  
+
+``` c
+#include <stdio.h>
+
+void print(char* C) {
+	while (*C != '\0'){
+		printf("%c", *C);
+		C++;
+	}
+	
+	printf("\n");
+}
+
+int main() {
+	char c[20] = "Hello";
+	  
+	print(c);
+	  
+	return 0;
+}
+```
+
+### More Facts
+``` c
+char c[20] = "Hello"; // string gets stored in the space for array.
+char* c = "Hello"; // String gets stored as compile time constant.
+```
+
+**OUTPUT: AELLO**  
+``` c
+#include <stdio.h>
+
+void print(char* C) {
+	C[0] = 'A';
+	
+	while (*C != '\0'){
+		printf("%c", *C);
+		C++;
+	}
+	
+	printf("\n");
+}
+
+  
+
+int main() {
+	char c[20] = "Hello";
+	
+	print(c);
+	
+	return 0;
+}
+```
+
+***USING `const` to make it immutable***  
+``` c
+#include <stdio.h>
+
+// Error: you can't change const variable
+void print(const char* C) {
+	C[0] = 'A';
+	while (*C != '\0'){
+		printf("%c", *C);
+		C++;
+	}
+	
+	printf("\n");
+}
+
+int main() {
+	char c[20] = "Hello";
+	  
+	print(c);
+	  
+	return 0;
+}
+```
+
+## Pointers and Multidimensional arrays
+...
+
+
+
 To Be Continued...
 
 **Work in Progress...**  
